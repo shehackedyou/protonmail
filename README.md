@@ -10,6 +10,10 @@ ultra-light version that will allow us to build ultra-light clients for very
 specific purposes; allowing us great customization without much overhead
 ideally.
 
+#### Development
+Lets start by merging down some of the files like manager; that are spread
+across like 10 files unnecessarily. 
+
 #### References:
 
 https://github.com/johannesdrescher/go-protonmail **This is the project we
