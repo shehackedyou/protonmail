@@ -108,6 +108,30 @@ func main() {
 	}
 }
 
+// TODO: Send mail is something like this; I think the ideal solution atm would
+// be to not run a webpage but instead just resend the code to a persons email
+//func sendMail() {
+//	c, privateKeys, err := auth.NewManager(newClient).Auth(username, bridgePassword)
+//	if err != nil {
+//		log.Fatal(err)
+//	}
+//
+//	u, err := c.GetCurrentUser()
+//	if err != nil {
+//		log.Fatal(err)
+//	}
+//
+//	addrs, err := c.ListAddresses()
+//	if err != nil {
+//		log.Fatal(err)
+//	}
+//
+//	err = smtpbackend.SendMail(c, u, privateKeys, addrs, rcpt, os.Stdin)
+//	if err != nil {
+//		log.Fatal(err)
+//	}
+//}
+
 func printStruct(s interface{}) {
 	structJson, err := json.MarshalIndent(s, "", "  ")
 	if err != nil {
