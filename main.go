@@ -7,12 +7,12 @@ import (
 	"log"
 	"os"
 
-	pmapi "github.com/shehackedyou/protonmail/pmapi"
+	api "github.com/shehackedyou/protonmail/api"
 	//totp "github.com/pquerna/otp/totp"
 )
 
 func main() {
-	manager := pmapi.New(pmapi.Config{
+	manager := api.New(api.Config{
 		HostURL:    "https://api.protonmail.ch",
 		AppVersion: "web-account@4.28.2",
 	})
@@ -41,7 +41,7 @@ func main() {
 		panic(err)
 	}
 
-	hashedMboxPassword, err := pmapi.HashMailboxPassword([]byte(password), salt)
+	hashedMboxPassword, err := api.HashMailboxPassword([]byte(password), salt)
 	if err != nil {
 		panic(err)
 	}
@@ -62,11 +62,11 @@ func main() {
 		panic(err)
 	}
 
-	var allMessages []*pmapi.Message
+	var allMessages []*api.Message
 	allMailMessageCount := messageCounts[5]
 	page := 0
 	for count := allMailMessageCount.Total; count > 0; count -= 100 {
-		messages, _, err := client.ListMessages(context.Background(), &pmapi.MessagesFilter{
+		messages, _, err := client.ListMessages(context.Background(), &api.MessagesFilter{
 			Page:      page,
 			PageSize:  100,
 			AddressID: mainAddressId,
