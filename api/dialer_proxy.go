@@ -1,4 +1,4 @@
-package pmapi
+package api
 
 import (
 	"net"

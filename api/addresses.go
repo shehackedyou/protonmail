@@ -1,10 +1,11 @@
-package pmapi
+package api
 
 import (
 	"context"
 	"strings"
 
 	"github.com/ProtonMail/gopenpgp/crypto"
+
 	"github.com/go-resty/resty"
 	"github.com/pkg/errors"
 )

@@ -1,9 +1,22 @@
-package pmapi
+package api
 
 import (
+	"os"
 	"runtime"
 	"strings"
 )
+
+func getRootURL() string {
+	// This config allows to dynamically change ROOT URL.
+	url := os.Getenv("PMAPI_ROOT_URL")
+	if strings.HasPrefix(url, "http") {
+		return url
+	}
+	if url != "" {
+		return "https://" + url
+	}
+	return "https://api.protonmail.ch"
+}
 
 type Config struct {
 	// HostURL is the base URL of API.

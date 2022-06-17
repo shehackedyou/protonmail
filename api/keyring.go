@@ -1,4 +1,4 @@
-package pmapi
+package api
 
 import (
 	"bytes"
@@ -8,6 +8,7 @@ import (
 	"io/ioutil"
 
 	"github.com/ProtonMail/gopenpgp/crypto"
+
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 )

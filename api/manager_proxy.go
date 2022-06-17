@@ -1,4 +1,4 @@
-package pmapi
+package api
 
 // AllowProxy allows the client manager to switch clients over to a proxy if need be.
 func (m *manager) AllowProxy() {

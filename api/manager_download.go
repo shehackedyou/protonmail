@@ -1,10 +1,11 @@
-package pmapi
+package api
 
 import (
 	"io/ioutil"
 
-	"github.com/ProtonMail/gopenpgp/crypto"
 	"golang.org/x/net/context"
+
+	"github.com/ProtonMail/gopenpgp/crypto"
 )
 
 // DownloadAndVerify downloads a file and its signature from the given locations `file` and `sig`.

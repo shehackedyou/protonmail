@@ -1,4 +1,4 @@
-package pmapi
+package api
 
 func iHasFlag(i, flag int) bool           { return i&flag == flag }
 func iHasAtLeastOneFlag(i, flag int) bool { return i&flag > 0 }

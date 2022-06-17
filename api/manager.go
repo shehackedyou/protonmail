@@ -1,7 +1,8 @@
-package pmapi
+package api
 
 import (
 	"context"
+	"crypto/tls"
 	"net/http"
 	"sync"
 	"time"
@@ -27,6 +28,15 @@ type manager struct {
 
 func New(cfg Config) Manager {
 	return newManager(cfg)
+}
+
+func newProxyDialerAndTransport(cfg Config) (*ProxyTLSDialer, http.RoundTripper) {
+	transport := CreateTransportWithDialer(NewBasicTLSDialer(cfg))
+
+	// TLS certificate of testing environment might be self-signed.
+	transport.TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
+
+	return nil, transport
 }
 
 func newManager(cfg Config) *manager {

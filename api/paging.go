@@ -1,4 +1,4 @@
-package pmapi
+package api
 
 const defaultPageSize = 100
 

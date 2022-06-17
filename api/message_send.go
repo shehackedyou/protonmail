@@ -1,4 +1,4 @@
-package pmapi
+package api
 
 import (
 	"context"
@@ -8,6 +8,8 @@ import (
 	"github.com/ProtonMail/gopenpgp/crypto"
 	"github.com/go-resty/resty"
 )
+
+// TODO: REVIEW THIS SO WE CAN EASILY SEND MAIL
 
 // Draft actions.
 const (

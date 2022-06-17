@@ -1,4 +1,4 @@
-package pmapi
+package api
 
 import (
 	"github.com/go-resty/resty"
